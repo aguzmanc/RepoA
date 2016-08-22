@@ -1,6 +1,5 @@
 linea a
 linea b
-linea c
 linea d
-linea e
+linea mia
 linea f
