@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movimiento : MonoBehaviour {
 	
-	public float SlowAction=10f;
+	public float SlowAction=1f;
 
 
 	bool _arriba;
