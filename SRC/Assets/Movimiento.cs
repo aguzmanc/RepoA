@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movimiento : MonoBehaviour {
 	
-	public float SlowAction=10;
+	public float SlowAction=10f;
 
 
 	bool _arriba;
@@ -36,17 +36,15 @@ public class Movimiento : MonoBehaviour {
 	
 	void Update () 
 	{
-		//SlowAction = SlowAction;
+		//SlowAction = SlowAction * Time.deltaTime;
 		if (Arriba)
-			transform.Translate (transform.forward * SlowAction);
-
-
+			transform.position = transform.position + transform.forward * SlowAction;
 		if (Abajo)
 			transform.position = transform.position + transform.forward * -SlowAction;
 		if (Izquierda)
-			transform.Rotate(0,-SlowAction,0);
+			transform.Rotate(0,-SlowAction*5,0);
 		if (Derecha)
-			transform.Rotate(0,SlowAction,0);
+			transform.Rotate(0,SlowAction*5,0);
 	}
 
 
