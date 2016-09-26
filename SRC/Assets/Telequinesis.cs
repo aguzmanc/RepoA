@@ -26,7 +26,6 @@ public class Telequinesis : MonoBehaviour {
         if(C.tag=="Alzable")
         {
             Instantiate(Boton);
-            
         }
     }
     void OnTriggerStay(Collider C)
