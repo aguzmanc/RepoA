@@ -3,13 +3,8 @@ using System.Collections;
 
 public class Personajes : MonoBehaviour {
 
-    float _slowAction=10f;
-    public float SlowAction
-    {
-        get { return _slowAction; }
-        set { _slowAction = value; }
-    }
-
+    public static float SlowAction;
+    
    
 
     bool _lento;
@@ -19,9 +14,8 @@ public class Personajes : MonoBehaviour {
         set { _lento = value; }
     }
 
-    public Personajes(float SlowAction, bool Lento)
+    public Personajes(bool Lento)
     {
-        this.SlowAction = SlowAction;
         this.Lento = Lento;
     }
     void Start () {
@@ -29,18 +23,11 @@ public class Personajes : MonoBehaviour {
 	}
 	
 	void Update () {
-           
-
+        if (Lento)
+            SlowAction = 0.1f;
+        else
+            SlowAction = 1f;
         }
 
-    public float Realentizar(bool Lento)
-    {
-        if (Lento) {
-            return 0.1f;
-        }
-        else { 
-            return 1f;
-            
-        }
-    }
+    
 }

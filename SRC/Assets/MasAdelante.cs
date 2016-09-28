@@ -6,7 +6,7 @@ public class MasAdelante : Personajes {
     public float velocidad = 10f;
 
 
-    public MasAdelante(float SlowAction, bool Lento) : base(SlowAction, Lento)
+    public MasAdelante(bool Lento) : base(Lento)
     {
     }
 
@@ -17,9 +17,6 @@ public class MasAdelante : Personajes {
 
     void Update()
     {
-        bool slow = Lento;
-
-        SlowAction = Realentizar(slow);
 
         transform.position = transform.position + transform.forward * SlowAction*10f;
     }

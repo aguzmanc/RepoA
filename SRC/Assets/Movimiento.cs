@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Movimiento : MonoBehaviour {
+public class Movimiento : Personajes {
 	
-	public float SlowAction=1f;
 
 
 	bool _arriba;
@@ -25,7 +24,12 @@ public class Movimiento : MonoBehaviour {
 	}
 
 	bool _izquierda;
-	public bool Izquierda {
+
+    public Movimiento(bool Lento) : base(Lento)
+    {
+    }
+
+    public bool Izquierda {
 		get{ return _izquierda;}
 		set{ _izquierda = value;}
 	}

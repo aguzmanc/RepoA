@@ -5,7 +5,7 @@ public class Adelante : Personajes {
     public float velocidad = 1f;
     
 
-    public Adelante(float SlowAction, bool Lento) : base(SlowAction, Lento)
+    public Adelante(bool Lento) : base(Lento)
     {
     }
     
@@ -14,9 +14,7 @@ public class Adelante : Personajes {
     }
 	
 	void Update () {
-        bool slow = Lento;
-
-        SlowAction = Realentizar(slow);
+        
         
         transform.position = transform.position + transform.forward * SlowAction;
 	}

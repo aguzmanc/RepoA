@@ -25,7 +25,7 @@ public class Telequinesis : MonoBehaviour {
     {
         if(C.tag=="Alzable")
         {
-            Instantiate(Boton);
+            Boton.SetActive(true);
         }
     }
     void OnTriggerStay(Collider C)
@@ -36,7 +36,7 @@ public class Telequinesis : MonoBehaviour {
     void OnTriggerExit(Collider C)
     {
         if (C.tag == "Alzable")
-            Destroy(Boton);
+            Boton.SetActive(false);
     }
 
 
