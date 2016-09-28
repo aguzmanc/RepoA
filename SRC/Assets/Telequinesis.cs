@@ -4,6 +4,7 @@ using System.Collections;
 public class Telequinesis : MonoBehaviour {
     public float Suavidad = 0.05f;
     public GameObject Boton;
+    public Rigidbody _rb;
 
     bool _posible;
     public bool Posible
@@ -32,6 +33,7 @@ public class Telequinesis : MonoBehaviour {
     {
         if(Posible)
          C.transform.position = Vector3.Lerp(C.transform.position, transform.position, Suavidad);
+
     }
     void OnTriggerExit(Collider C)
     {
