@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Movimiento : Personajes {
-	
+    public float Multi=1;
 
 
 	bool _arriba;
@@ -49,7 +49,16 @@ public class Movimiento : Personajes {
 			transform.Rotate(0,-SlowAction*5,0);
 		if (Derecha)
 			transform.Rotate(0,SlowAction*5,0);
-	}
+        //transform.position = transform.position - transform.up *Multi*SlowAction;
+    }
+
+    void OnTriggerEnter(Collider C)
+    {
+        if(C.tag== "Piso")
+        {
+            Multi = 0;
+        }
+    }
 
 
 
