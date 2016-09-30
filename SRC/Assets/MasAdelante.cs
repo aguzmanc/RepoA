@@ -4,6 +4,7 @@ using System.Collections;
 public class MasAdelante : Personajes {
 
     public float velocidad = 10f;
+    float tiempo=5f;
 
 
     public MasAdelante(bool Lento) : base(Lento)
@@ -17,7 +18,9 @@ public class MasAdelante : Personajes {
 
     void Update()
     {
-        Destroy(this.gameObject, 5);
+        if(tiempo<0)
+            Destroy(this.gameObject);
+        tiempo = tiempo - Time.deltaTime * SlowAction;
         transform.position = transform.position + transform.forward * SlowAction*10f;
     }
 }
