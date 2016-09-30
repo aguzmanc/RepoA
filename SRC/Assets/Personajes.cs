@@ -5,6 +5,7 @@ public class Personajes : MonoBehaviour {
 
     public static float SlowAction;
 
+
     bool _alzado;
     public bool Alzado
     {
@@ -32,6 +33,7 @@ public class Personajes : MonoBehaviour {
 
     void Start () {
         Alzado = false;
+        
 	
 	}
 	

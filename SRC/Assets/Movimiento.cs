@@ -4,7 +4,7 @@ using System.Collections;
 public class Movimiento : Personajes {
     public float Multi=1;
 
-    Rigidbody _rb;
+
 
 
 	bool _arriba;
@@ -37,7 +37,7 @@ public class Movimiento : Personajes {
 	}
 
 	void Start () {
-        _rb = GetComponent<Rigidbody>();
+
 		
 	}
 	

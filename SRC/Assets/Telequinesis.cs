@@ -6,6 +6,7 @@ public class Telequinesis : MonoBehaviour {
     public GameObject Boton;
     public Rigidbody _rb;
     public bool Lanzar=false;
+    public Movimiento Movimiento;
 
     bool _posible;
     public bool Posible
@@ -43,13 +44,10 @@ public class Telequinesis : MonoBehaviour {
                  Lanzar = true;
                 if (Lanzar && Input.touchCount > 0 )
                 {
-                    Vector3 Dedo = Input.GetTouch(0).position;
-                    Dedo.z = 8;
-                    Vector3 pos = Camera.main.ScreenToWorldPoint(Dedo);
+                    _rb.AddForce(GetComponentInParent<Transform>().forward * 1000);
                     Lanzar = false;
                     Posible = false;
                     C.tag = "lanzado";
-                    _rb.AddForce(pos);
                 }
                 bool mouse = Input.GetMouseButtonDown(0);
                 if (mouse)
