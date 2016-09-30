@@ -40,16 +40,17 @@ public class Telequinesis : MonoBehaviour {
             if (C.tag == "Alzable") { 
                  C.transform.position = Vector3.Lerp(C.transform.position, transform.position, Suavidad);
                  Lanzar = true;
-                if (Lanzar && Input.touchCount > 0)
+                if (Lanzar && Input.touchCount > 0 )
                 {
                     Vector3 Dedo = Input.GetTouch(0).position;
                     Dedo.z = 8;
                     Debug.Log(Dedo);
                     Vector3 pos = Camera.main.ScreenToWorldPoint(Dedo);
-                    
                     Lanzar = false;
-                    
                     Posible = false;
+                    _rb=C.GetComponent<Rigidbody>();
+                    C.tag = "lanzado";
+                    _rb.AddForce(pos);
                 }
             }
         }
@@ -57,10 +58,11 @@ public class Telequinesis : MonoBehaviour {
     }
     void OnTriggerExit(Collider C)
     {
-        if (C.tag == "Alzable")
+        if (C.tag == "Alzable" || C.tag == "lanzado")
             { 
             Boton.SetActive(false);
             Posible = false;
+            C.tag = "Alzable";
         }
     }
     
