@@ -40,11 +40,11 @@ public class Personajes : MonoBehaviour {
             SlowAction = 0.1f;
         else
             SlowAction = 1f;
-        if (Alzado == false)
-            transform.position = transform.position - transform.up * 1;
-        }
-    
-        
+        Physics.gravity = SlowAction *new Vector3 (0,-9.81f,0);
+    }
 
-    
+
+
+
+
 }
