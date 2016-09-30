@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Saltar : MonoBehaviour {
-    public float Fuerza = 1f;
+    public float Fuerza = 150f;
 
 	void Start () {
 	
