@@ -7,6 +7,7 @@ public class Telequinesis : MonoBehaviour {
     public Rigidbody _rb;
     public bool Lanzar=false;
     public Movimiento Movimiento;
+    public Vector3 VelocidadDeLanzamiento;
 
     bool _posible;
     public bool Posible
@@ -48,6 +49,7 @@ public class Telequinesis : MonoBehaviour {
                     Lanzar = false;
                     Posible = false;
                     C.tag = "lanzado";
+                    VelocidadDeLanzamiento = _rb.velocity;
                 }
                 bool mouse = Input.GetMouseButtonDown(0);
                 if (mouse)

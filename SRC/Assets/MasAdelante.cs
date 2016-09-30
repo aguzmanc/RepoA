@@ -17,7 +17,7 @@ public class MasAdelante : Personajes {
 
     void Update()
     {
-
+        Destroy(this.gameObject, 5);
         transform.position = transform.position + transform.forward * SlowAction*10f;
     }
 }
