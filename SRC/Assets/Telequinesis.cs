@@ -19,8 +19,7 @@ public class Telequinesis : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (Input.touchCount > 0)
-            Debug.Log(Input.GetTouch(0).position);
+       
         
             
     }
@@ -46,14 +45,22 @@ public class Telequinesis : MonoBehaviour {
                 {
                     Vector3 Dedo = Input.GetTouch(0).position;
                     Dedo.z = 8;
-                    Debug.Log(Dedo);
                     Vector3 pos = Camera.main.ScreenToWorldPoint(Dedo);
                     Lanzar = false;
                     Posible = false;
-                    
                     C.tag = "lanzado";
                     _rb.AddForce(pos);
                 }
+                bool mouse = Input.GetMouseButtonDown(0);
+                if (mouse)
+                {
+                    
+                    _rb.AddForce(GetComponentInParent<Transform>().forward*1000);
+                    Lanzar = false;
+                    Posible = false;
+                    C.tag = "lanzado";
+                }
+                    
             }
             
         }
