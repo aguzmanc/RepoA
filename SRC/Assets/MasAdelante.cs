@@ -4,7 +4,7 @@ using System.Collections;
 public class MasAdelante : Personajes {
 
     public float velocidad = 10f;
-    float tiempo=5f;
+    public float tiempo=5f;
 
 
     public MasAdelante(bool Lento) : base(Lento)
