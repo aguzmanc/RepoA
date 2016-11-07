@@ -57,13 +57,7 @@ public class Movimiento : Personajes {
 
     }
 
-    void OnTriggerEnter(Collider C)
-    {
-        if(C.tag== "Piso")
-        {
-            Multi = 0;
-        }
-    }
+    
 
 
 
